@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\TrackYardSales\src\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -50,21 +53,20 @@
     <Reference Include="System.Xml" />
     <Reference Include="TinyRabbitMQClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\TinyRabbitMQClient.1.0.1\lib\TinyRabbitMQClient.dll</HintPath>
+      <HintPath>packages\TinyRabbitMQClient.1.0.2\lib\net40\TinyRabbitMQClient.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsumerConfiguration.cs" />
+    <Compile Include="Configuration\ConsumerConfiguration.cs" />
     <Compile Include="ConsumingManager.cs" />
     <Compile Include="Globals.cs" />
-    <Compile Include="ILogger.cs" />
-    <Compile Include="PassthroughLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueueConfiguration.cs" />
+    <Compile Include="Configuration\QueueConfiguration.cs" />
     <Compile Include="QueueConsumerBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="RabbitMQConsumerFramework.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
